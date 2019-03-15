@@ -11,6 +11,7 @@ Omega2系列核心板使用说明：https://docs.onion.io/omega2-docs/index.html
 开源软件和硬件资料：https://github.com/OnionIoT  
 
 ## OpenWrt  
+* https://github.com/OnionIoT/source  
 * https://github.com/jslink/openwrt-trunk-dl  
 * http://openwrt.bjbook.net/download/index.html  
 * https://git.openwrt.org  
