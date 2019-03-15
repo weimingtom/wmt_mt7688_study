@@ -16,4 +16,7 @@ Omega2系列核心板使用说明：https://docs.onion.io/omega2-docs/index.html
 * https://git.openwrt.org  
 * make -j1 V=s  
 * http://gw.stasoft.net/dl/  
+* https://github.com/mhei/libugpio  
+* https://github.com/OnionIoT/c-cross-compile-example/  
+
 
