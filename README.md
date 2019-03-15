@@ -15,3 +15,5 @@ Omega2系列核心板使用说明：https://docs.onion.io/omega2-docs/index.html
 * http://openwrt.bjbook.net/download/index.html  
 * https://git.openwrt.org  
 * make -j1 V=s  
+* http://gw.stasoft.net/dl/  
+
