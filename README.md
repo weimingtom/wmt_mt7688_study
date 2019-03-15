@@ -12,3 +12,4 @@ Omega2系列核心板使用说明：https://docs.onion.io/omega2-docs/index.html
 
 ## OpenWrt  
 * https://github.com/jslink/openwrt-trunk-dl  
+* http://openwrt.bjbook.net/download/index.html  
