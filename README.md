@@ -10,6 +10,21 @@ Omega2系列核心板使用说明：https://docs.onion.io/omega2-docs/index.html
 官方网站：https://onion.io/  
 开源软件和硬件资料：https://github.com/OnionIoT  
 
+## Omega2+ SSH  
+* Wifi connection    
+wifi: Omega-xxxx  
+password: 12345678  
+
+* Browser  
+http://192.168.3.1  
+user: root  
+pass: onioneer  
+
+* SSH (use putty)     
+192.168.3.1  
+user: root  
+pass: onioneer  
+
 ## OpenWrt  
 * https://github.com/OnionIoT/source  
 * https://github.com/jslink/openwrt-trunk-dl  
