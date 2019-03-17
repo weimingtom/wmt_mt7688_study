@@ -21,13 +21,13 @@ See https://docs.onion.io/omega2-docs/first-time-setup.html
 http://192.168.3.1  
 User: root  
 Pass: onioneer  
-See https://docs.onion.io/omega2-docs/first-time-setup-command-line.html  
+See https://docs.onion.io/omega2-docs/first-time-setup.html  
 
 * Use SSH (use putty)     
 IP: 192.168.3.1  
 User: root  
 Pass: onioneer  
-See https://docs.onion.io/omega2-docs/first-time-setup.html  
+See https://docs.onion.io/omega2-docs/first-time-setup-command-line.html  
 $ wifisetup  
 
 ## OpenWrt  
