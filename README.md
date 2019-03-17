@@ -14,19 +14,21 @@ Omega2系列核心板使用说明：https://docs.onion.io/omega2-docs/index.html
 * Wifi connection    
 Wifi: omega-xxxx  
 Password: 12345678  
-See https://docs.onion.io/omega2-docs/get-started.html  
+See https://docs.onion.io/omega2-docs/first-time-setup.html  
 **After this, use browser or use putty**    
 
 * Use browser  
 http://192.168.3.1  
 User: root  
 Pass: onioneer  
-See https://github.com/OnionIoT/Onion-Console  
+See https://docs.onion.io/omega2-docs/first-time-setup-command-line.html  
 
 * Use SSH (use putty)     
 IP: 192.168.3.1  
 User: root  
 Pass: onioneer  
+See https://docs.onion.io/omega2-docs/first-time-setup.html  
+$ wifisetup  
 
 ## OpenWrt  
 * https://github.com/OnionIoT/source  
