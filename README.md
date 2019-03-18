@@ -39,5 +39,7 @@ $ wifisetup
 * http://gw.stasoft.net/dl/  
 * https://github.com/mhei/libugpio  
 * https://github.com/OnionIoT/c-cross-compile-example/  
+* https://github.com/OnionIoT/OpenWRT-Packages/tree/master/gpio-test  
+
 
 
