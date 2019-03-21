@@ -43,5 +43,7 @@ $ wifisetup
 * https://openwrt.org/docs/guide-developer/build-system/install-buildsystem  
 * https://github.com/akmaker/openwrt-cn/blob/master/chinese/openwrt-pcduino/移植OpenWrt到pcDuino.md  
 
+## OpenWrt helloworld    
+* https://openwrt.org/docs/guide-developer/helloworld/start  
 
 
