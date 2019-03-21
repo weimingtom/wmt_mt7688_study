@@ -46,4 +46,6 @@ $ wifisetup
 ## OpenWrt helloworld    
 * https://openwrt.org/docs/guide-developer/helloworld/start  
 
+## Linkit7688 openwrt  
+* https://github.com/waynepiekarski/linkit-smart-7688-openwrt  
 
