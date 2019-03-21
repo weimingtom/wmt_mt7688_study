@@ -30,7 +30,7 @@ Pass: onioneer
 See https://docs.onion.io/omega2-docs/first-time-setup-command-line.html  
 $ wifisetup  
 
-## OpenWrt  
+## Onion OpenWrt  
 * https://github.com/OnionIoT/source  
 * https://github.com/jslink/openwrt-trunk-dl  
 * http://openwrt.bjbook.net/download/index.html  
@@ -46,6 +46,6 @@ $ wifisetup
 ## OpenWrt helloworld    
 * https://openwrt.org/docs/guide-developer/helloworld/start  
 
-## Linkit7688 openwrt  
+## Linkit7688 OpenWrt  
 * https://github.com/waynepiekarski/linkit-smart-7688-openwrt  
 
