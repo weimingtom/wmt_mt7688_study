@@ -41,6 +41,7 @@ $ wifisetup
 * https://github.com/OnionIoT/c-cross-compile-example/  
 * https://github.com/OnionIoT/OpenWRT-Packages/tree/master/gpio-test  
 * https://openwrt.org/docs/guide-developer/build-system/install-buildsystem  
+* https://github.com/akmaker/openwrt-cn/blob/master/chinese/openwrt-pcduino/移植OpenWrt到pcDuino.md  
 
 
 
