@@ -74,7 +74,7 @@ $ wifisetup
 * https://blog.csdn.net/qq_36347513/article/details/81508385  
 * https://blog.csdn.net/qq_36347513/article/details/81543094  
 
-## VoCore2, The Coin-sized Linux Computer    
+## VoCore2, MT7628, The Coin-sized Linux Computer    
 * https://vocore.io/v2.html  
 * Directly write to memory/register  
 * http://vonger.cn/misc/vocore2/tools/mem.zip  
