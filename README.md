@@ -68,3 +68,7 @@ $ wifisetup
 ## 司徒的教學網站  
 * https://steward-fu.github.io/website/mcu.htm  
 * https://steward-fu.github.io/website/mcu/smart_mt7688/framebuffer.htm  
+
+## 无涯MT7688开发板  
+* MT7688学习笔记（1）——搭建环境、编译烧写  
+* https://blog.csdn.net/qq_36347513/article/details/81508385  
