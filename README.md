@@ -72,3 +72,4 @@ $ wifisetup
 ## 无涯MT7688开发板  
 * MT7688学习笔记（1）——搭建环境、编译烧写  
 * https://blog.csdn.net/qq_36347513/article/details/81508385  
+* https://blog.csdn.net/qq_36347513/article/details/81543094  
