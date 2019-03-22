@@ -63,4 +63,8 @@ $ wifisetup
 * https://github.com/RF-Networks/openwrt-RFN-feed/tree/master/i2c-tools  
 
 ## test1  
-https://github.com/lurancehuahua/test1  
+* https://github.com/lurancehuahua/test1  
+
+## 司徒的教學網站  
+* https://steward-fu.github.io/website/mcu.htm  
+* https://steward-fu.github.io/website/mcu/smart_mt7688/framebuffer.htm  
