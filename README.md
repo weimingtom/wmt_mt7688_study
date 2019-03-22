@@ -51,6 +51,7 @@ $ wifisetup
 * https://github.com/waynepiekarski/linkit-smart-7688-openwrt  
 * https://github.com/MediaTek-Labs/linkit-smart-7688-feed  
 * https://github.com/MediaTek-Labs/linkit-smart-7688-feed/blob/master/mtk-linkit/Makefile  
+* https://github.com/brucepom/custom_linkit  
 
 ## 为联发科Linkit-Smart-7688编译openwrt的方法  
 * http://etrd.org/2017/05/11/%E4%B8%BA%E8%81%94%E5%8F%91%E7%A7%91Linkit-Smart-7688%E7%BC%96%E8%AF%91openwrt%E7%9A%84%E6%96%B9%E6%B3%95/  
