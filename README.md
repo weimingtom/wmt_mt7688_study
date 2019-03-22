@@ -57,6 +57,8 @@ $ wifisetup
 * http://etrd.org/2017/05/11/%E4%B8%BA%E8%81%94%E5%8F%91%E7%A7%91Linkit-Smart-7688%E7%BC%96%E8%AF%91openwrt%E7%9A%84%E6%96%B9%E6%B3%95/  
 
 ## spi-tft  
-https://github.com/MagicPrince666/spi-tft  
+* https://github.com/MagicPrince666/spi-tft  
 
+## i2c  
+* https://github.com/RF-Networks/openwrt-RFN-feed/tree/master/i2c-tools  
 
