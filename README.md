@@ -62,3 +62,5 @@ $ wifisetup
 ## i2c  
 * https://github.com/RF-Networks/openwrt-RFN-feed/tree/master/i2c-tools  
 
+## test1  
+https://github.com/lurancehuahua/test1  
