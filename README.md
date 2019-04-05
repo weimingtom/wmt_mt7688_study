@@ -79,3 +79,6 @@ $ wifisetup
 * Directly write to memory/register  
 * http://vonger.cn/misc/vocore2/tools/mem.zip  
 * https://www.bilibili.com/video/av17827335  
+
+## 智能路由器开发指南  
+(baidupan) pdf  
