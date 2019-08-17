@@ -3,3 +3,19 @@ http://repository.timesys.com/buildsources/u/uClibc/uClibc-0.9.33/
 https://www.mirrorservice.org/pub/linux/kernel/v3.0/
 https://ftp.denx.de/pub/u-boot/
 http://ftp.wayne.edu/gnu/mpfr/
+
+
+------------------------------
+
+
+git clone https://gitee.com/weimingtom/openwrt-raspberrypi
+git checkout -f rpi
+
+flex
+zlib1g-dev
+gawk
+subversion
+
+sudo apt-get install g++ flex zlib1g-dev gawk subversion ncurses-dev
+
+ubuntu120432
