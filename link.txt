@@ -6,18 +6,3 @@ http://ftp.wayne.edu/gnu/mpfr/
 https://mirror.bjtu.edu.cn/kernel/linux/kernel/v3.x/
 https://blog.csdn.net/g__gle/article/details/8033535
 http://mirror.tuna.tsinghua.edu.cn/kernel/linux/kernel/
-
-------------------------------
-
-
-git clone https://gitee.com/weimingtom/openwrt-raspberrypi
-git checkout -f rpi
-
-flex
-zlib1g-dev
-gawk
-subversion
-
-sudo apt-get install g++ flex zlib1g-dev gawk subversion ncurses-dev
-
-ubuntu120432
