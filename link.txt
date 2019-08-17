@@ -1,0 +1,5 @@
+http://downloads.openwrt.org.cn/sources/
+http://repository.timesys.com/buildsources/u/uClibc/uClibc-0.9.33/
+https://www.mirrorservice.org/pub/linux/kernel/v3.0/
+https://ftp.denx.de/pub/u-boot/
+http://ftp.wayne.edu/gnu/mpfr/
