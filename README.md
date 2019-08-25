@@ -82,3 +82,6 @@ $ wifisetup
 
 ## 智能路由器开发指南  
 (baidupan) pdf  
+
+## mt7688  
+https://github.com/KianWeng/mtk7688  
