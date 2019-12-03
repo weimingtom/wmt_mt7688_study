@@ -85,3 +85,6 @@ $ wifisetup
 
 ## mt7688  
 https://github.com/KianWeng/mtk7688  
+
+## Lean's OpenWrt source  
+https://github.com/coolsnowwolf/lede  
