@@ -88,3 +88,6 @@ https://github.com/KianWeng/mtk7688
 
 ## Lean's OpenWrt source  
 https://github.com/coolsnowwolf/lede  
+
+## nanopi-openwrt  
+https://github.com/klever1988/nanopi-openwrt  
