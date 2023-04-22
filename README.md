@@ -2,13 +2,16 @@
 My MT7688 study
 
 ## Omega2+    
-开源软件和硬件资料：https://github.com/OnionIoT    
+* 开源软件和硬件资料：https://github.com/OnionIoT    
 Omega2系列核心板使用说明：https://docs.onion.io/omega2-docs/index.html  
 实战项目：https://docs.onion.io/omega2-project-book-vol1/index.html  
 论坛地址：https://community.onion.io/  
 国内的论坛：https://cn.onion.io/  
 官方网站：https://onion.io/  
 开源软件和硬件资料：https://github.com/OnionIoT  
+* 我看到omega2的文档，好像现在支持直接在设备上gcc了，嗯，这有点帅，  
+omega2+的内存是128MB，omega2则是64MB，能跑得动gcc也是神奇  
+（很容易内存不足挂掉），我想arm9是不是也能试试。。。  
 
 ## Omega2+ SSH  
 * Wifi connection    
