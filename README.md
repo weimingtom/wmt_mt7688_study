@@ -76,6 +76,8 @@ $ wifisetup
 * MT7688学习笔记（1）——搭建环境、编译烧写  
 * https://blog.csdn.net/qq_36347513/article/details/81508385  
 * https://blog.csdn.net/qq_36347513/article/details/81543094  
+* https://gitee.com/hi-wooya/projects  
+* https://github.com/hi-wooya?tab=repositories  
 
 ## VoCore2, MT7628, The Coin-sized Linux Computer    
 * https://vocore.io/v2.html  
