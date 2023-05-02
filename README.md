@@ -83,8 +83,19 @@ $ wifisetup
 ## VoCore2, MT7628, The Coin-sized Linux Computer    
 * https://vocore.io/v2.html  
 * Directly write to memory/register  
+```
+Directly write to memory/register
+We made a simple tool for this, download here, its name is "mem", put the executable file into /bin/ in VoCore2.
+1. read from register/memory, for example: 0x10000060, pin control register
+example: mem 0x10000060
+2. write to register/memory, must in 32bits(4bytes)
+example: mem 0x10000064 0x05540555
+here is an example bash script flash the LED every second on VoCore2
+mem 0x10000064 0x05540555; mem 0x10000604 0x1000; while [ 1 ]; do mem 0x10000634 0x1000; sleep 1; mem 0x10000644 0x1000; sleep 1; done
+```
 * http://vonger.cn/misc/vocore2/tools/mem.zip  
 * https://www.bilibili.com/video/av17827335  
+
 
 ## 智能路由器开发指南  
 (baidupan) pdf  
