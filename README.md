@@ -78,6 +78,7 @@ $ wifisetup
 * https://blog.csdn.net/qq_36347513/article/details/81543094  
 * https://gitee.com/hi-wooya/projects  
 * https://github.com/hi-wooya?tab=repositories  
+* search 无涯_mt7688, WKA-M76S_开发手册_V1.1_2021.09.28.pdf  
 
 ## VoCore2, MT7628, The Coin-sized Linux Computer    
 * https://vocore.io/v2.html  
