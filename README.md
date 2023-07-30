@@ -117,3 +117,7 @@ https://github.com/coolsnowwolf/lede
 https://github.com/klever1988/nanopi-openwrt  
 
 ## wrtnode  
+
+## 7688hdk  
+* https://mangopi.org/7688hdk
+* MT7688_Datasheet_v1_4  
