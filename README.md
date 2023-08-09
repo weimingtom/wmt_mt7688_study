@@ -121,3 +121,7 @@ https://github.com/klever1988/nanopi-openwrt
 ## 7688hdk  
 * https://mangopi.org/7688hdk
 * MT7688_Datasheet_v1_4  
+
+## qemu-mt7628  
+* https://github.com/newluhux/qemu-mt7628  
+
