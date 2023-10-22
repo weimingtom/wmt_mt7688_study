@@ -125,7 +125,9 @@ https://github.com/klever1988/nanopi-openwrt
 ## qemu-mt7628  
 * https://github.com/newluhux/qemu-mt7628  
 
-## python内核 7688_使用MT7688A的SPI驱动液晶屏（framebuffer方式）WIDORA NEO  
+## 使用MT7688A的SPI驱动液晶屏（framebuffer方式）WIDORA NEO   
+* https://www.amobbs.com/thread-5686620-1-1.html  
+* python内核 7688_使用MT7688A的SPI驱动液晶屏（framebuffer方式）WIDORA NEO  
 * https://blog.csdn.net/weixin_35143166/article/details/113970298
 * https://mangopi.org/7688hdk
 * SPI驱动液晶屏（framebuffer方式）
