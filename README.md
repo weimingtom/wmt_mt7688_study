@@ -133,3 +133,21 @@ https://github.com/klever1988/nanopi-openwrt
 * SPI驱动液晶屏（framebuffer方式）
 * https://mangopi.org/7688dev  
 * https://mangopi.org/ips  
+
+## vocore2 screen  
+* https://vocore.io/screen.html  
+* set screen to black: dd if=/dev/zero of=/dev/fb0 bs=1000 count=768  
+* set screen to random pixel: dd if=/dev/urandom of=/dev/fb0 bs=1000 count=768
+* some tuturial, not good, see https://v.youku.com/v_show/id_XNDE0Mzk1MjUyOA==.html  
+```
+ckermit
+cd /mnt/mmcblk0p1/
+ls
+insmod fbusb.vocore2.ko
+(connect screen)
+dd if=/dev/zero of=/dev/fb0 bs=1024 count=768
+dmesg > /dev/tty
+dmesg > /dev/tty0
+./xdoom.vocore2
+dd if=/dev/zero of=/dev/fb0 bs=854 count=480
+```
