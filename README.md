@@ -132,7 +132,11 @@ https://github.com/klever1988/nanopi-openwrt
 * https://mangopi.org/7688hdk
 * SPI驱动液晶屏（framebuffer方式）
 * https://mangopi.org/7688dev  
-* https://mangopi.org/ips  
+* https://mangopi.org/ips
+* (NOT MT7688) 使用 LicheeRV 86 Panel 与 Tina BSP 实现 RGB 与 SPI 双屏显示  
+* https://wiki.sipeed.com/soft/Lichee/zh/Lichee-RV/contribution/Dual_screen_display/Dual_screen_display.html  
+* (NOT MT7688) luckfox, SPI 驱动 LCD  
+* https://wiki.luckfox.com/zh/Luckfox-Pico/Luckfox-Pico-LCD/  
 
 ## vocore2 screen  
 * https://vocore.io/screen.html  
