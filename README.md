@@ -151,7 +151,9 @@ dmesg > /dev/tty0
 ./xdoom.vocore2
 dd if=/dev/zero of=/dev/fb0 bs=854 count=480
 ```
-* source see https://github.com/Vonger/vocore2:
+* source see :  
+https://github.com/Vonger/vocore2  
 https://github.com/Vonger/vocore2/tree/master/utils/fbusb  
 https://github.com/Vonger/vocore2/tree/master/utils/lvgl-fb-demo  
 https://github.com/Vonger/vocore2/tree/master/utils/libsdl
+
