@@ -1,0 +1,131 @@
+https://mangopi.org/ips
+
+SPI驱动液晶屏（framebuffer方式）
+这个页面讲述如何使用MT7688A驱动液晶屏幕。 8-) ，据了解，在MT7688上用FB方法驱动彩屏，WIDORA首当其冲。
+
+教程做好的固件： openwrt-ramips-mt7688-widora32m-9341.bin
+
+准备
+iLi9341控制器的SPI液晶，也可以其他控制器，例如ST7735r，保证留出来SPI接口。
+openwrt_widora代码，保证最新的master即可。
+NEO一块，杜邦线若干。
+硬件连接
+拿我手里的液晶屏为例，是一块240*320分辨率的IPS液晶，液晶屏原理图： 2.4横屏扣式_tk024f3041.pdf 
+
+需要连接的信号如下表：
+
+NEO	液晶屏
+GND 电源地	GND 电源地
+3V3 电源	3V3 电源
+CK SPI时钟	RS（SCK）
+MO SPI数据输出	MOSI SPI从机输入
+CS1 SPI片选1	CS SPI片选
+VF FLASH电源	RST 低电平复位，正常时保持高电平
+GPIO0 GPIO11脚	WR（D/C） 数据/命令选择端
+3V3 电源	BL 背光控制，高电平点亮
+
+
+修改代码
+首先，保证有openwrt_widora的代码并且编译过，因为涉及到内核代码修改，不编译是找不到内核源码的。
+
+1 进入内核视频驱动目录：cd build_dir/target-mipsel_24kec+dsp_uClibc-0.9.33.2/linux-ramips_mt7688/linux-3.18.29/drivers/video/
+
+2 使用git下载fbtft工程到这里：git clone https://github.com/notro/fbtft.git ，下载完后文件列表如下：
+
+mangodeMacBook-Pro:video mango$ ls
+Kconfig             built-in.o          fbdev               logo                of_display_timing.c videomode.c
+Makefile            console             fbtft               modules.builtin     of_videomode.c
+backlight           display_timing.c    hdmi.c              modules.order       vgastate.c
+mangodeMacBook-Pro:video mango$ 
+3 运行如下两句，让内核知道你这里添加了驱动
+
+在video/Makefile最后添加了一行 obj-y += fbtft
+
+在video/Kconfig 中source "drivers/video/fbdev/Kconfig"行下添加一行：source "drivers/video/fbtft/Kconfig"
+
+4 回到openwrt_widora根目录，运行make kernel_menuconfig，找
+
+Device Drivers  --->
+  Character devices  ---> 
+
+
+Graphics support —>
+
+
+
+分别展开看：
+
+ Direct Rendering Manager  ---> 
+    < > Direct Rendering Manager (XFree86 4.1.0 and higher DRI support)  ----
+  
+Frame buffer Devices  ---> 
+    <*> Support for small TFT LCD display modules  --->
+      <*>   FB driver for the ILI9341 LCD Controller
+     
+
+
+-*- Backlight & LCD device support  ---> 这一项无需关心
+Console display driver support  ---> 
+
+
+Bootup logo —>
+
+                       [ ]   Standard black and white Linux logo (NEW)      
+                       [*]   Standard 16-color Linux logo (NEW)            
+                       [*]   Standard 224-color Linux logo (NEW)
+                       
+配置完后，推出时保存配置。 
+
+5 修改DTS，这里对应NEO，我们修改Widora32M.dts，路径是：target/linux/ramips/dts/Widora32M.dts 从105行，spidev@1这一段整体换成：
+
+                       ili9341@1 {
+                               #address-cells = <1>;
+                               #size-cells = <1>;
+                               status = "okay";
+                               compatible = "ilitek,ili9341";
+                               reg = <1 0>;
+                               spi-max-frequency = <32000000>;
+                               txbuflen = <16>;
+                               rotate = <0>;
+                               bgr;
+                               fps = <15>;
+                               buswidth = <8>;
+                               dc-gpios = <&gpio0 11 1>;
+                       };
+改好的DTS在此： widora32m.dts.zip
+
+回到openwrt_widora根目录开始编译，make V=s 由于配置内核后，会和openwrt里个别选项冲突，例如有如下需要手动选择的情况，按照正常平台选择即可。 
+
+颜色反了
+修改fb_ili9341.c，在0x11前增加一条0x21指令：
+
+  write_reg(par, 0x21);
+  write_reg(par, 0x11); /* sleep out */
+修改后编译，刷入NEO。
+
+自动关屏幕问题
+在drivers/tty/vt.c中设定了自动关屏时间为10分钟,LCD在执行了关屏动作后可能出现错误,不能再恢复正常. 找到其中 static int blankinterval = 10*60; 这一句, 将数值改为0,自动关屏功能就会失效.
+
+测试
+不出意外，可以看到启动logo了：
+
+
+
+终端，可以看到/dev/下有了fb0设备：
+
+
+
+把随机数打印到屏幕，不出意外看到花屏，root@Widora:~# cat /dev/urandom > /dev/fb0
+
+
+
+把屏幕例化成了很多tty设备，所以也可以往屏幕打印字符了：
+
+root@Widora:~# echo hello > /dev/tty0
+root@Widora:~# echo hello > /dev/tty0
+root@Widora:~# echo hello > /dev/tty0
+root@Widora:~# echo hello > /dev/tty0
+root@Widora:~# echo hello > /dev/tty0
+效果：
+
+
