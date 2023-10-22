@@ -1,0 +1,160 @@
+本帖最后由 avr-arm 于 2018-1-20 14:33 编辑
+
+使用MT7688A的硬件SPI驱动液晶屏幕，并且使用了framebuffer方式，这种方式的好处有两个：一是无需关心刷屏，例化为标准fb0设备，以方便后边增加QT、Xorg等等标准界面程序，二是CPU使用率极低，具体底层操作都是内核层完成的，应用只需要关心fb0即可。
+
+算是轻微另类玩法吧，毕竟在路由器SOC上玩标准界面还是挺新颖的。我们widora就喜欢折腾好玩的东东。
+
+教程做好的固件：
+
+准备
+
+iLi9341控制器的SPI液晶，也可以其他控制器，例如ST7735r，保证留出来SPI接口。
+
+openwrt_widora代码，保证最新的master即可。 https://github.com/widora/openwrt_widora
+
+MT7688 NEO一块，杜邦线若干。(其他MT7688开发板也应该行)
+
+硬件连接
+
+拿我手里的液晶屏为例，是一块240*320分辨率的IPS液晶，液晶屏原理图：
+
+与NEO的连接：
+
+连接实际效果图：
+
+修改代码
+
+首先，保证有openwrt_widora的代码并且编译过，因为涉及到内核代码修改，不编译是找不到内核源码的。
+
+1 进入内核视频驱动目录：cd build_dir/target-mipsel_24kec+dsp_uClibc-0.9.33.2/linux-ramips_mt7688/linux-3.18.29/drivers/video/
+
+2 使用git下载fbtft工程到这里：git clone https://github.com/notro/fbtft.git ，下载完后文件列表如下：
+
+mangodeMacBook-Pro:video mango$ ls
+
+Kconfig             built-in.o          fbdev               logo                of_display_timing.c videomode.c
+
+Makefile            console             fbtft               modules.builtin     of_videomode.c
+
+backlight           display_timing.c    hdmi.c              modules.order       vgastate.c
+
+mangodeMacBook-Pro:video mango$
+
+3 运行如下两句，让内核知道你这里添加了驱动
+
+在video/Makefile最后添加了一行 obj-y += fbtft
+
+在video/Kconfig 中source “drivers/video/fbdev/Kconfig”行下添加一行：source “drivers/video/fbtft/Kconfig”
+
+4 回到openwrt_widora根目录，运行make kernel_menuconfig，找
+
+Device Drivers  --->
+
+Character devices  --->
+
+使能虚拟的terminal设备，如下图：
+
+Graphics support —>
+
+分别展开看：
+
+Direct Rendering Manager  --->
+
+< > Direct Rendering Manager (XFree86 4.1.0 and higher DRI support)  ----
+
+Frame buffer Devices  --->
+
+Support for small TFT LCD display modules  --->
+
+   FB driver for the ILI9341 LCD Controller
+
+-*- Backlight & LCD device support  ---> 这一项无需关心
+
+Console display driver support  --->
+
+{{::屏幕快照_2018-01-20_上午11.21.39.png|}}
+
+Bootup logo  --->
+
+[ ]   Standard black and white Linux logo (NEW)
+
+Standard 16-color Linux logo (NEW)
+
+Standard 224-color Linux logo (NEW)
+
+配置完后，推出时保存配置。
+
+修改DTS，这里对应NEO，我们修改Widora32M.dts，路径是：target/linux/ramips/dts/Widora32M.dts 从105行，spidev@1这一段整体换成：
+
+ili9341@1 {
+
+#address-cells = <1>;
+
+#size-cells = <1>;
+
+status = "okay";
+
+compatible = "ilitek,ili9341";
+
+reg = <1 0>;
+
+spi-max-frequency = <32000000>;
+
+txbuflen = <16>;
+
+rotate = <0>;
+
+bgr;
+
+fps = <15>;
+
+buswidth = <8>;
+
+dc-gpios = ;
+
+};
+
+改好的DTS在此：
+
+回到openwrt_widora根目录开始编译，make V=s 由于配置内核后，会和openwrt里个别选项冲突，例如有如下需要手动选择的情况，按照正常平台选择即可。
+
+颜色反了
+
+修改fb_ili9341.c，在0x11前增加一条0x21指令：
+
+write_reg(par, 0x21);
+
+write_reg(par, 0x11); /* sleep out */
+
+修改后编译，刷入NEO。
+
+测试
+
+不出意外，可以看到启动logo了：
+
+终端，可以看到/dev/下有了fb0设备：
+
+把随机数打印到屏幕，不出意外看到花屏，root@Widora:~# cat /dev/urandom > /dev/fb0
+
+把屏幕例化成了很多tty设备，所以也可以往屏幕打印字符了：
+
+root@Widora:~# echo hello > /dev/tty0
+
+root@Widora:~# echo hello > /dev/tty0
+
+root@Widora:~# echo hello > /dev/tty0
+
+root@Widora:~# echo hello > /dev/tty0
+
+root@Widora:~# echo hello > /dev/tty0
+
+效果：
+
+找了一下之前在MT7688上跑QT的图片，也贴到这里吧，后边有时间了把如何移植QT到MT7688也写一写。
+
+更多想了解widora的之前有个帖子： 联发科MT7688AN(Widora-NEO)开源资料贴 https://www.amobbs.com/forum.php ... amp;_dsign=8fcc495f
+
+还可以去官网 https://widora.io https://wiki.widora.io 去搂一眼，
+————————————————
+版权声明：本文为CSDN博主「知行白」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/weixin_35143166/article/details/113970298
