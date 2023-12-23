@@ -162,6 +162,11 @@ https://github.com/Vonger/vocore2/tree/master/utils/fbusb
 https://github.com/Vonger/vocore2/tree/master/utils/lvgl-fb-demo  
 https://github.com/Vonger/vocore2/tree/master/utils/libsdl  
 * run vocore2 lvgl rom (firmware)
+see https://github.com/weimingtom/wmt_lvgl_study/blob/master/README.md  
+see http://vonger.cn/misc/screen/20200927.bin.xz  
+see https://vocore.io/v2u.html  
+see https://vonger.cn/misc/screen/  
+see https://vonger.cn/misc/screen/20200628.touch.bin.xz
 ```
 我搞明白怎么用vocore2运行LVGL例子和驱动usb屏幕，
 之前失败其实是因为fbusb.ko的驱动程序不兼容（因为需要和内核版本完全一样才能正确运行），
@@ -170,3 +175,10 @@ https://github.com/Vonger/vocore2/tree/master/utils/libsdl
 刷完就可以看到LVGL例子（开机启动，不需要insmod）。具体效果略，
 因为触摸比较卡顿，可能和屏幕速度或者mt7628主频低有关，也许作者不想明说
 ```  
+```
+1. use PC wireless connect to your VoCore hotspot, open browser view 192.168.1.1 or 192.168.61.1 (I use 61.1).  
+2. LuCI console using username: root, password: vocore,  
+3. select "System" -> "Backup/Flash Firmware"   
+4. uncheck 'keep settting', and "Flash Image". choose 20200628.touch.bin  
+5. after flashing, will auto start running /root/demo, it's a LVGL demo program  
+```
