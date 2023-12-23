@@ -161,7 +161,7 @@ https://github.com/Vonger/vocore2/tree/master/utils
 https://github.com/Vonger/vocore2/tree/master/utils/fbusb  
 https://github.com/Vonger/vocore2/tree/master/utils/lvgl-fb-demo  
 https://github.com/Vonger/vocore2/tree/master/utils/libsdl  
-* run vocore2 lvgl rom (firmware)
+* How to run vocore2 lvgl firmware rom    
 see https://github.com/weimingtom/wmt_lvgl_study/blob/master/README.md  
 see http://vonger.cn/misc/screen/20200927.bin.xz  
 see https://vocore.io/v2u.html  
