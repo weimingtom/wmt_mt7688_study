@@ -161,4 +161,12 @@ https://github.com/Vonger/vocore2/tree/master/utils
 https://github.com/Vonger/vocore2/tree/master/utils/fbusb  
 https://github.com/Vonger/vocore2/tree/master/utils/lvgl-fb-demo  
 https://github.com/Vonger/vocore2/tree/master/utils/libsdl  
-
+* run vocore2 lvgl rom (firmware)
+```
+我搞明白怎么用vocore2运行LVGL例子和驱动usb屏幕，
+之前失败其实是因为fbusb.ko的驱动程序不兼容（因为需要和内核版本完全一样才能正确运行），
+所以要么重新编译内核或者重新编译驱动程序。
+然后我想起其实可以通过wifi来刷固件，然后找了一下，发现有个touch固件自带fbusb驱动和LVGL，
+刷完就可以看到LVGL例子（开机启动，不需要insmod）。具体效果略，
+因为触摸比较卡顿，可能和屏幕速度或者mt7628主频低有关，也许作者不想明说
+```  
